@@ -4,6 +4,7 @@
 
 ## 从这里开始
 
+- [视觉第一课：访问 GitHub](视觉第一课访问GitHub.pdf)：打开仓库并查看知识库资料。
 - [知识库说明](知识库说明.md)：知识库用途与参与成员。
 - [前置](前置.md)：开始学习前的准备与常用资源。
 - [大纲](大纲.md)：视觉识别、定位导航和通信方向的学习主题。
@@ -18,8 +19,7 @@
 | 04 数据集与标注 | [数据集与 X-AnyLabeling](<04 数据集与标注/数据集与 X-AnyLabeling.md>) |
 | 05 Linux 与 ROS2 | [Linux 安装与基础配置](<05 Linux 与 ROS2/Linux 安装与基础配置.md>) · [ROS2 learning](<05 Linux 与 ROS2/ROS2 learning.md>) |
 | 06 SLAM 定位导航 | [IMU & Kalman](<06 SLAM 定位导航/IMU & Kalman.md>) · [卡尔曼滤波（kalman filter）](<06 SLAM 定位导航/卡尔曼滤波（kalman filter）.md>) · [视觉SLAM初步](<06 SLAM 定位导航/视觉SLAM初步.md>) · [fastlivo2 learning](<06 SLAM 定位导航/fastlivo2 learning.md>) |
-| 07 文档资料 | [视觉第一课访问GitHub（PDF）](<07 文档资料/视觉第一课访问GitHub.pdf>) |
 
 ## 文件说明
 
-各篇文档使用 Markdown 格式。所有图片和视频统一保存在 [media](media) 中，按 `media/<分类>/<文档名>/` 分类；《前置》的附件位于 `media/前置/`。移动或重命名文档与媒体文件时，请同步更新文中的相对路径。
+知识库文档以 Markdown 和 PDF 格式保存。图片和视频统一放在 [media](media) 中：分类文档使用 `media/<分类>/<文档名>/`，根目录文档使用 `media/<文档名>/`。移动或重命名文档与媒体文件时，请同步更新文中的相对路径。
