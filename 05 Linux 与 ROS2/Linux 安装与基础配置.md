@@ -4,7 +4,7 @@
 
 面向 2026 GSing ROS2 Humble 工程的 Ubuntu 22\.04 教程
 
-![image1\.png](图片和附件/Linux 安装与基础配置/image1.png)
+![image1\.png](../media/05%20Linux%20与%20ROS2/Linux%20安装与基础配置/image1.png)
 
 图 1  Ubuntu 22\.04 安装主流程
 

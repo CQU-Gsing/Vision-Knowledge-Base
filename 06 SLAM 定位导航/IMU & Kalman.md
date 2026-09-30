@@ -456,11 +456,11 @@ Ay = kf_ay.out;
 Az = kf_az.out;
 ```
 
-[只有互补滤波\.mp4](图片和附件/IMU & Kalman/只有互补滤波.mp4)
+[只有互补滤波\.mp4](../media/06%20SLAM%20定位导航/IMU%20&%20Kalman/只有互补滤波.mp4)
 
 上面是只有互补滤波的情况, 响应较快但是噪声也相应的较多
 
-[互补滤波\+kalman\.mp4](图片和附件/IMU & Kalman/互补滤波+kalman.mp4)
+[互补滤波\+kalman\.mp4](../media/06%20SLAM%20定位导航/IMU%20&%20Kalman/互补滤波+kalman.mp4)
 
 这个是加上kalman的结果, 明显平滑了, 但是计算量大\( 甚至用的还不是kalman的完全体\) 导致响应没那么及时, 不过还可以接受
 
@@ -479,7 +479,7 @@ Az = kf_az.out;
 加速度计可以等效为这个:
 
 
-![image\.png](图片和附件/IMU & Kalman/image.png)
+![image\.png](../media/06%20SLAM%20定位导航/IMU%20&%20Kalman/image.png)
 
 当静止不动时, 加速度计读出的向量是$\begin{bmatrix}
 0\\
@@ -497,7 +497,7 @@ a_x
 
 $θ = \arctan(\frac{a_y}{a_z})$
 
-![image\.png](图片和附件/IMU & Kalman/image%201.png)
+![image\.png](../media/06%20SLAM%20定位导航/IMU%20&%20Kalman/image%201.png)
 
 pitch角同理, 但是, 当yaw发生变化时, 获得的加速度始终是$\begin{bmatrix}
 0 \\
@@ -542,13 +542,13 @@ $\mathbf{B}_{local} =\begin{bmatrix} B_x\\B_y\\ B_z\end{bmatrix}$, 方向指向�
 
 具体可以看这个视频:
 
-[e0fc4ee931fcdc4a25eb7da98eeba009\.mp4](图片和附件/IMU & Kalman/e0fc4ee931fcdc4a25eb7da98eeba009.mp4)
+[e0fc4ee931fcdc4a25eb7da98eeba009\.mp4](../media/06%20SLAM%20定位导航/IMU%20&%20Kalman/e0fc4ee931fcdc4a25eb7da98eeba009.mp4)
 
 
 
 ## 如何实现磁力计纠正Yaw?
 
-![fb3f765f53b1a9e15d0b2a7646e3b0b\.jpg](图片和附件/IMU & Kalman/fb3f765f53b1a9e15d0b2a7646e3b0b.jpg)
+![fb3f765f53b1a9e15d0b2a7646e3b0b\.jpg](../media/06%20SLAM%20定位导航/IMU%20&%20Kalman/fb3f765f53b1a9e15d0b2a7646e3b0b.jpg)
 
 由mpu6050的结算过程, 我们知道$θ_{pitch}=\arctan(\frac{g_z}{\sqrt{g_x^2+g_y^2}} ), \theta_{roll}=\arctan(\frac{g_y}{g_z})$
 

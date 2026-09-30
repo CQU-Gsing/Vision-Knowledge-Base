@@ -51,7 +51,7 @@ conda env list
 现在应该可以弹出这个环境下的所有小环境,应该会有你刚刚创建的V8:
 
 
-![image\.png](图片和附件/YOLO实践文档/image%2022.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2022.png)
 
 可以看到,我们的v8已经创建好了
 
@@ -66,7 +66,7 @@ conda activate v8
 
 正常情况下,前面的标志应该会从base切换到v8:
 
-![image\.png](图片和附件/YOLO实践文档/image%2025.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2025.png)
 
 如果发现没有切换,那么请重新关闭vscode,再次进入\.
 
@@ -134,7 +134,7 @@ pip install -r .\requirements.txt --index-url http://mirrors.aliyun.com/pypi/sim
 
 在进行敲代码之前,一定要记得切换python编译器为你之前配置的\(不然有些包会显示无法解析\):
 
-![image\.png](图片和附件/YOLO实践文档/image%204.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%204.png)
 
 ## YOLO V8代码架构
 
@@ -146,33 +146,33 @@ git clone https://github.com/ultralytics/ultralytics
 
 克隆后,现在你的项目文件应该长这样:
 
-![image\.png](图片和附件/YOLO实践文档/image%2019.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2019.png)
 
 
 
 在这个文件夹中,大部分的文件我们都是用不到的\.我们只用重点关注ultralytics文件夹里面的内容即可\.现在我对这个文件夹里面的部分进行一个讲解:
 
-![image\.png](图片和附件/YOLO实践文档/image%2010.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2010.png)
 
-![image\.png](图片和附件/YOLO实践文档/image%2027.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2027.png)
 
-![image\.png](图片和附件/YOLO实践文档/image%2013.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2013.png)
 
 数据集的yaml文件:YAML 文件是一种专门用于配置和数据交换的人类可读数据序列化格式。
 
-![image\.png](图片和附件/YOLO实践文档/image%2024.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2024.png)
 
 最主要的是用V8的yaml文件\.
 
-![image\.png](图片和附件/YOLO实践文档/image%2018.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2018.png)
 
 数据集加载处理文件,转换等一系列脚本\.
 
-![image\.png](图片和附件/YOLO实践文档/image%2014.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2014.png)
 
 训练,评估和推理有关核心代码\.\(用的不多,大多都是配置文件\)
 
-![image\.png](图片和附件/YOLO实践文档/image%2028.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2028.png)
 
 模块定义文件\.
 
@@ -183,7 +183,7 @@ git clone https://github.com/ultralytics/ultralytics
 可以看到assets文件夹\(这个文件夹是数据集文件夹，之前有提到过\)：
 
 
-![image\.png](图片和附件/YOLO实践文档/image%206.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%206.png)
 
 里面有两张图，现在我们需要先把weights文件夹放进我们的项目文件夹下：
 
@@ -193,7 +193,7 @@ git clone https://github.com/ultralytics/ultralytics
 像这样：
 
 
-![image\.png](图片和附件/YOLO实践文档/image%2012.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2012.png)
 
 先来解释一下什么是weights文件：
 yolov8n\.pt
@@ -248,14 +248,14 @@ imgsz=640：推理分辨率。
 
 运行后，终端应该会这样：
 
-![image\.png](图片和附件/YOLO实践文档/image%2011.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2011.png)
 
 然后会生成一个runs的文件夹，里面就是训练后得到的图片标注：
 
 
-![image\.png](图片和附件/YOLO实践文档/image%208.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%208.png)
 
-![image\.png](图片和附件/YOLO实践文档/image%2029.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2029.png)
 
 如果做到这一步，恭喜你！YOLO大门正在向你打开！
 
@@ -267,7 +267,7 @@ imgsz=640：推理分辨率。
 
 首先，我们需要在v8环境下，搭建我们的框架：框架如下：（仅供参考，但是建议第一次训练模型的时候可以先跟着我做）
 
-![image\.png](图片和附件/YOLO实践文档/image%207.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%207.png)
 
 接下来，我将一个一个给大家讲解这些文件的意义（请你们也按照我的文件格式进行设置）
 
@@ -393,11 +393,11 @@ if __name__ == '__main__':
 
 大概就像这样👇
 
-![image\.png](图片和附件/YOLO实践文档/image%2015.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2015.png)
 
 
 
-![image\.png](图片和附件/YOLO实践文档/image%2017.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2017.png)
 
 2. **标注:这一步很简单，运行程序后，会让你一个一个手工标记水瓶的位置。保存后，会在labels文件夹下生成每个照片的txt文件**
 
@@ -604,11 +604,11 @@ if __name__ == '__main__':
 现在就开始训练啦！
 这里对终端的输出做一些解释：
 
-![image\.png](图片和附件/YOLO实践文档/image%2020.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2020.png)
 
 👆这张图是 YOLOv8 模型的自动批处理（AutoBatch）基准测试结果，它展示了你的 GPU
 
-![9e77a0730683b2cf1e106409f95959ce\.png](图片和附件/YOLO实践文档/9e77a0730683b2cf1e106409f95959ce.png)
+![9e77a0730683b2cf1e106409f95959ce\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/9e77a0730683b2cf1e106409f95959ce.png)
 
 👆这张图显示的是 YOLOv8 模型训练过程中的实时监控信息
 
@@ -632,22 +632,22 @@ if __name__ == '__main__':
 |cls\_loss|分类准确度|
 |dfl\_loss|分布聚焦损失|
 
-![image\.png](图片和附件/YOLO实践文档/image%202.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%202.png)
 
 训练完后，会生成best\.pt，训练好的权重模型。
 
-![image\.png](图片和附件/YOLO实践文档/image%209.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%209.png)
 
 👇这个是训练的结果图：
 
 
-![image\.png](图片和附件/YOLO实践文档/image%205.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%205.png)
 
-![image\.png](图片和附件/YOLO实践文档/image%201.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%201.png)
 
-![image\.png](图片和附件/YOLO实践文档/image%2021.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2021.png)
 
-![image\.png](图片和附件/YOLO实践文档/image.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image.png)
 
 
 
@@ -678,12 +678,12 @@ if __name__ == '__main__':
     )
 ```
 
-![image\.png](图片和附件/YOLO实践文档/image%2023.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2023.png)
 
 运行后，会生成一个predict文件夹：
 
 
-![image\.png](图片和附件/YOLO实践文档/image%203.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%203.png)
 
 类似这种👆
 
@@ -791,9 +791,9 @@ if __name__ == '__main__':
 
 ```
 
-![image\.png](图片和附件/YOLO实践文档/image%2026.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2026.png)
 
-![image\.png](图片和附件/YOLO实践文档/image%2016.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO实践文档/image%2016.png)
 
 你成功了吗？
 

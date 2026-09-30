@@ -18,13 +18,13 @@ YOLO模型：YOLO诞生于2015年，从第一版YOLO V1，到现在已经有了Y
 那么，什么是目标检测？
 简言之，目标检测是计算机视觉中比较简单的任务：
 
-![image\.png](图片和附件/YOLO理论/image%202.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO理论/image%202.png)
 
 上面三张图片，分别是计算机视觉的三类任务：分类，目标检测，实例分割。
 
 在讲解yolo原理之前，我们先引入滑窗法：就是用滑动窗口去识别一个一个物体。
 
-![image\.png](图片和附件/YOLO理论/image%205.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO理论/image%205.png)
 
 上面的红色框就是滑窗。比如一个物体正好出现在滑窗中，那么，我们就可以把它检测出来，这个滑窗的位置就是**这个物体所在的位置。**
 
@@ -48,7 +48,7 @@ YOLO模型：YOLO诞生于2015年，从第一版YOLO V1，到现在已经有了Y
 
 ## 图像预处理与网格划分
 
-![image\.png](图片和附件/YOLO理论/image%203.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO理论/image%203.png)
 
 我要识别照片里面的狗，自行车，怎么办？
 yolo第一步是分割图片，将输入图像分成SxS个网格，每个网格负责预测该网格内是否存在目标以及目标的类别和位置信息。
@@ -75,11 +75,11 @@ yolo第一步是分割图片，将输入图像分成SxS个网格，每个网格�
 所有整个ground truth的长度为：
 
 
-![image\.png](图片和附件/YOLO理论/image.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO理论/image.png)
 
 bounding box显示出来的样子：
 
-![image\.png](图片和附件/YOLO理论/image%201.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO理论/image%201.png)
 
 在上面的例子中，图片被分成了49个框，每个框预测2个bounding box，因此上面的图中有98个bounding box。
 
@@ -92,7 +92,7 @@ yolo算法采用单独的一个CNN模型实现end\-to\-end的目标检测：首�
 
 （end\-to\-end:通过单一模型，实现从原始数据输入到最终目标输出的完整映射的技术，是一种全局优化的方法，核心是减少人工干预）
 
-![image\.png](图片和附件/YOLO理论/image%206.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO理论/image%206.png)
 
 详细来说，这个步骤分为3个阶段：
 1\.图像缩放和填充，图像会被缩放到一个固定尺寸，比如448\*448，并归一化颜色通道；归一化的图像会被转换为一个四维张量（这个就是神经网络可以直接处理的格式）
@@ -121,17 +121,17 @@ YOLOv8 是 ultralytics 公司在 2023 年 1月 10 号开源的 YOLOv5 的下一�
 是一种摒弃了预定义锚框的现代检测范式。它不依赖于人工预设的候选框，而是让模型直接学习预测目标的位置和大小。
 
 
-![image\.png](图片和附件/YOLO理论/image%2011.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO理论/image%2011.png)
 
 anchor point: 是grid cell 中每个网格中心点的坐标，也可以说是feature map中每个像素点的中心坐标
 
 yolov8中预测框的输出是以anchor\_point为基准的的，每一个anchor\_point 都会输出一个预测框，一共是8080\+4040\+20\*20个
 
-![image\.png](图片和附件/YOLO理论/image%209.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO理论/image%209.png)
 
 网络部分的输出是ltrb,即预测框相对于anchor point 的上下左右范围，会进一步处理成一个x1,y1,x2,y2的形式。
 
-![image\.png](图片和附件/YOLO理论/image%2010.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO理论/image%2010.png)
 
 ## 3\.检测头
 
@@ -140,7 +140,7 @@ yolov8中预测框的输出是以anchor\_point为基准的的，每一个anchor\
 YOLO V8采用的是解耦头，类别概率和预测框结果分为两个检测头输出：
 
 
-![image\.png](图片和附件/YOLO理论/image%208.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO理论/image%208.png)
 
 ### 分布焦点损失：
 
@@ -154,7 +154,7 @@ YOLO V8采用的是解耦头，类别概率和预测框结果分为两个检测�
 
 缺乏不确定性建模：无法区分“确定性高”和“不确定性高”的预测（如遮挡目标），泛化能力受限。
 
-![image\.png](图片和附件/YOLO理论/image%204.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO理论/image%204.png)
 
 **边界框泛化分布学习方法**能够通过分布形状体现边界信息。将一个预测值建模为一段区间上的分布概率之和。
 
@@ -170,7 +170,7 @@ YOLO V8采用的是解耦头，类别概率和预测框结果分为两个检测�
 
 ## 损失计算
 
-![image\.png](图片和附件/YOLO理论/image%207.png)
+![image\.png](../media/03%20YOLO%20目标检测/YOLO理论/image%207.png)
 
 损失函数计算公式包括：
 

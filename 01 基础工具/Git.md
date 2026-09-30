@@ -4,7 +4,7 @@ Git \-\> 备份, 代码还原, 协同开发, 追责
 
 # 一\. Git的工作流程
 
-![f74784120fe854327f9300efe0ebd9d\.jpg](图片和附件/Git/f74784120fe854327f9300efe0ebd9d%201.jpg)
+![f74784120fe854327f9300efe0ebd9d\.jpg](../media/01%20基础工具/Git/f74784120fe854327f9300efe0ebd9d%201.jpg)
 
 
 
@@ -26,13 +26,13 @@ Git \-\> 备份, 代码还原, 协同开发, 追责
 
 \.git文件夹是隐藏的, 打开小眼睛才能看到
 
-![image\.png](图片和附件/Git/image%201.png)
+![image\.png](../media/01%20基础工具/Git/image%201.png)
 
 
 
 ## 基础操作指令
 
-![246d6ad54d743b0e04f7c9f6f116c32\.jpg](图片和附件/Git/246d6ad54d743b0e04f7c9f6f116c32.jpg)
+![246d6ad54d743b0e04f7c9f6f116c32\.jpg](../media/01%20基础工具/Git/246d6ad54d743b0e04f7c9f6f116c32.jpg)
 
 ```Plain Text
 git add [文件名(单个文件]或[.(全部文件)]          workspace -> index
@@ -151,7 +151,7 @@ int iCount = 0;
 
 分支的使用
 
-![e4e2aa7572b959e70944d1d4aa67987\.jpg](图片和附件/Git/e4e2aa7572b959e70944d1d4aa67987.jpg)
+![e4e2aa7572b959e70944d1d4aa67987\.jpg](../media/01%20基础工具/Git/e4e2aa7572b959e70944d1d4aa67987.jpg)
 
 
 
@@ -187,7 +187,7 @@ ssh -T git@gitee.com
 
 将本地仓库推送到远程仓库
 
-![image\.png](图片和附件/Git/image.png)
+![image\.png](../media/01%20基础工具/Git/image.png)
 
 ```Plain Text
 git remote add origin ssh地址
@@ -255,7 +255,7 @@ pull 拉取, 将仓库的更新拉取到本地并自动合并, 如果不指定br
 
 至此, 我们已经学会了在终端中操作git, 现在再看一次这张图
 
-![f74784120fe854327f9300efe0ebd9d\.jpg](图片和附件/Git/f74784120fe854327f9300efe0ebd9d.jpg)
+![f74784120fe854327f9300efe0ebd9d\.jpg](../media/01%20基础工具/Git/f74784120fe854327f9300efe0ebd9d.jpg)
 
 # 四\. 在VsCode\(Cursor\)中使用git
 

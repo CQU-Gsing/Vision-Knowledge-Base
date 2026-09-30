@@ -3,7 +3,7 @@
 # fastlivo2论文学习
 
 
-![image\.png](图片和附件/fastlivo2 learning/image%202.png)
+![image\.png](../media/06%20SLAM%20定位导航/fastlivo2%20learning/image%202.png)
 
 ## 摘要内容
 
@@ -39,11 +39,11 @@
 
 fastlivo2:结合传感器的耦合的一种算法
 
-![image\.png](图片和附件/fastlivo2 learning/image.png)
+![image\.png](../media/06%20SLAM%20定位导航/fastlivo2%20learning/image.png)
 
 （这里需要思考：雷达和相机的位置？两个传感器需要保持相对固定的位置上，那么现在的设计是，摄像头在机械爪处，那么，当机械臂运动 雷达和摄像头的相对位置就改变了🤔）
 
-![image\.png](图片和附件/fastlivo2 learning/image%203.png)
+![image\.png](../media/06%20SLAM%20定位导航/fastlivo2%20learning/image%203.png)
 
 ## 工作梳理
 
@@ -53,7 +53,7 @@ fastlivo2:结合传感器的耦合的一种算法
 什么是紧耦合？松耦合？
 
 
-![image\.png](图片和附件/fastlivo2 learning/image%201.png)
+![image\.png](../media/06%20SLAM%20定位导航/fastlivo2%20learning/image%201.png)
 
 稀疏直接法和稠密直接法？
 

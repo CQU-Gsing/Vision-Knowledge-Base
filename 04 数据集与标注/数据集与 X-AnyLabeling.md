@@ -4,11 +4,11 @@
 
 数据规范、AI 预标注与自定义 YOLO 模型
 
-![image1\.png](图片和附件/数据集与 X-AnyLabeling/image1.png)
+![image1\.png](../media/04%20数据集与标注/数据集与%20X-AnyLabeling/image1.png)
 
 图 1  AI 预标注不能替代人工复核
 
-![image2\.png](图片和附件/数据集与 X-AnyLabeling/image2.png)
+![image2\.png](../media/04%20数据集与标注/数据集与%20X-AnyLabeling/image2.png)
 
 图 2  X\-AnyLabeling AI 辅助检测界面示例
 

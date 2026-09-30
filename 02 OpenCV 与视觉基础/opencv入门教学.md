@@ -12,37 +12,37 @@
 
 首先我们需要理解图像是由什么构成的，假设我现在有一张网格
 
-![image\.png](图片和附件/opencv入门教学/image%201.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%201.png)
 
 我想要在网格里写上数字3
 
-![image\.png](图片和附件/opencv入门教学/image%2048.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2048.png)
 
 只需要将其中几个网格涂成黑色即可
 
-![image\.png](图片和附件/opencv入门教学/image%2042.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2042.png)
 
 为了方便我们让黑色的格子为0，白色的格子为1
 
 如果想要增加更多细节，只需要增加格子数量即可，而这些格子也就是我们通常所说的像素，举个栗子，我们常说的4K=3840\*2160，实际上就是指图像的宽为3840，高为2160个格子或者像素组成（我们通常说宽和高，而不说长和宽）。
 
-![image\.png](图片和附件/opencv入门教学/image%2035.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2035.png)
 
 而现在我们只有黑白两种颜色，这样的图像我们称之为二值图，现在我们要增加更多细节，这意味着我们不能只有0和1两种取值
 
-![image\.png](图片和附件/opencv入门教学/image%2025.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2025.png)
 
 于是我们将使用256种取值，其中0是黑色，255是白色
 
-![image\.png](图片和附件/opencv入门教学/image%2044.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2044.png)
 
 于是我们得到了灰度图像
 
 对于彩色图像我们有红色，绿色，蓝色（R,G,B\)三种灰度图像，分别代表其颜色的强度
 
-![image\.png](图片和附件/opencv入门教学/image%204.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%204.png)
 
-![image\.png](图片和附件/opencv入门教学/image%2014.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2014.png)
 
 # 配置环境
 
@@ -56,7 +56,7 @@ https://blog\.csdn\.net/zczc66/article/details/145964746?fromshare=blogdetail\&s
 
 直接用homebrew ，`brew install opencv`就行，homebrew 会自动配置变量，然后mac 也不用额外配置cmake,直接新建一个项目，加一个CMakeLists\.txt,内容大概是
 
-![截屏2025\-10\-13 14\.35\.05\.png](图片和附件/opencv入门教学/截屏2025-10-13%2014.35.05.png)
+![截屏2025\-10\-13 14\.35\.05\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/截屏2025-10-13%2014.35.05.png)
 
 #### For windows
 
@@ -69,7 +69,7 @@ https://blog\.csdn\.net/zczc66/article/details/145964746?fromshare=blogdetail\&s
 之后就可以新建一个\.cpp为后缀的文件了。
 
 
-![fc2c13512444b63341f09ff1cdadc866\.png](图片和附件/opencv入门教学/fc2c13512444b63341f09ff1cdadc866.png)
+![fc2c13512444b63341f09ff1cdadc866\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/fc2c13512444b63341f09ff1cdadc866.png)
 
 点击运行后，会出现两个选项。（如果你是想以c语言写，那么就选择第一个，它会生成gcc\.exe的文件，如果是用C\+\+写的，就选择第二个）
 
@@ -207,12 +207,12 @@ cmake --build build
 最后运行出来是这样的：
 
 
-![image\.png](图片和附件/opencv入门教学/image%2037.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2037.png)
 
 注：
 这里主播有报错，但是程序可以运行，uu们不用担心，这个错误是 IDE/编辑器（如 VS Code）的智能提示问题，不是编译错误。你的程序能正常运行说明 OpenCV 已经正确安装和链接了。（但也记得调 vscode 的 json 配置文件，把opencv的路径include进去就行，不然会一直弹报错影响编码）
 
-![image\.png](图片和附件/opencv入门教学/image%2032.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2032.png)
 
 参考配置（这个放进\.vscode文件夹里面）：
 
@@ -290,11 +290,11 @@ opencv 是模块化组织的，第一步我们一般先用`core`和`highgui`这�
 
 
 
-![截屏2025\-10\-13 15\.07\.22\.png](图片和附件/opencv入门教学/截屏2025-10-13%2015.07.22.png)
+![截屏2025\-10\-13 15\.07\.22\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/截屏2025-10-13%2015.07.22.png)
 
 运行结果是
 
-![截屏2025\-10\-13 14\.47\.18\.png](图片和附件/opencv入门教学/截屏2025-10-13%2014.47.18.png)
+![截屏2025\-10\-13 14\.47\.18\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/截屏2025-10-13%2014.47.18.png)
 
 注意我这里先自己准备了"example\.png",然后为了各位想直接copy代码的，就没用绝对路径，而是`cv::Mat image = cv::imread("example.png");`,这个相对路径，如果想直接运行，你需要将你准备的example\.png放在编译完成后的可执行程序所在的目录下，如我这里就是`cmake-build-debug`这个文件夹
 
@@ -310,7 +310,7 @@ opencv 是模块化组织的，第一步我们一般先用`core`和`highgui`这�
 
 每个函数具体的，大家在自己的IDE 中鼠标悬停在想了解的函数上就会自动浮现介绍\(其实就是注释\),如
 
-![截屏2025\-10\-13 15\.06\.07\.png](图片和附件/opencv入门教学/截屏2025-10-13%2015.06.07.png)
+![截屏2025\-10\-13 15\.06\.07\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/截屏2025-10-13%2015.06.07.png)
 
 # 4\.图片处理
 
@@ -322,17 +322,17 @@ opencv 是模块化组织的，第一步我们一般先用`core`和`highgui`这�
 
 
 
-![截屏2025\-10\-13 15\.52\.44\.png](图片和附件/opencv入门教学/截屏2025-10-13%2015.52.44.png)
+![截屏2025\-10\-13 15\.52\.44\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/截屏2025-10-13%2015.52.44.png)
 
 运行结果
 
-![截屏2025\-10\-13 15\.33\.13\.png](图片和附件/opencv入门教学/截屏2025-10-13%2015.33.13.png)
+![截屏2025\-10\-13 15\.33\.13\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/截屏2025-10-13%2015.33.13.png)
 
 这个程序就是将彩色图像转换成灰色图像，我们来解析一下代码
 
 我建了一个`cv::Mat`的对象`graycolor`,用`cv::cvtColor(image, grayimage, cv::COLOR_BGR2GRAY);`这个函数来转换色彩空间
 
-![截屏2025\-10\-13 15\.53\.40\.png](图片和附件/opencv入门教学/截屏2025-10-13%2015.53.40.png)
+![截屏2025\-10\-13 15\.53\.40\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/截屏2025-10-13%2015.53.40.png)
 
 这是它的函数签名，这个函数属于Imgproc 模块，这个模块提供了大量的图像处理函数。这些函数可以用于图像的滤波、几何变换、颜色空间转换、直方图计算等
 
@@ -417,7 +417,7 @@ cv::filter2D(src, dst, -1, kernel);
 
 以下是图解：
 
-![image\.png](图片和附件/opencv入门教学/image%205.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%205.png)
 
 那么，可以看出，设置合理的结构元就十分重要了，如何设置合理的大小，充分利用资源，是关键。
 
@@ -477,7 +477,7 @@ int main() {
 }
 ```
 
-![image\.png](图片和附件/opencv入门教学/image%203.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%203.png)
 
 运行后可发现，不同的腐蚀效果是不同的，这就启示我们，需要设置合理的结构元，使特征体现得到最大化。
 
@@ -485,7 +485,7 @@ int main() {
 
 膨胀相当于是腐蚀反向操作，图像中较亮的物体尺寸会变大，较暗的物体尺寸会减小。
 
-![image\.png](图片和附件/opencv入门教学/image%2022.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2022.png)
 
 # 5\.图像特征提取
 
@@ -509,7 +509,7 @@ int main() {
 
 示例图片原图：
 
-![image\.png](图片和附件/opencv入门教学/image%2010.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2010.png)
 
 简单来说：
 
@@ -525,7 +525,7 @@ int main() {
     
 ```
 
-![image\.png](图片和附件/opencv入门教学/image%2049.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2049.png)
 
 **对y取微分，得到的是x方向的边缘。**
 
@@ -537,7 +537,7 @@ int main() {
     imshow("边缘图y", abs_grad_y);
 ```
 
-![image\.png](图片和附件/opencv入门教学/image%2036.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2036.png)
 
 **线性混合：**
 
@@ -547,7 +547,7 @@ int main() {
     imshow("线性混合", dst);
 ```
 
-![image\.png](图片和附件/opencv入门教学/image%2045.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2045.png)
 
 可以很明显看出，通过对x方向求微分和y方向求微分后，都没有将它们线性融合后得到的边缘检测效果好。
 
@@ -654,9 +654,9 @@ int main() {
 }
 ```
 
-![image\.png](图片和附件/opencv入门教学/image%207.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%207.png)
 
-![image\.png](图片和附件/opencv入门教学/image%2033.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2033.png)
 
 这里只是讲解了各种算法的基本使用，如果想通过canny进行一些实际处理（比如对赛道的识别），那就需要设置相应的ROI，然后对赛道的特征进行一个限定。（具体的代码怎么写可以询问ai）
 
@@ -703,7 +703,7 @@ HSI是一种非常符合人类视觉直觉的色彩描述方式：H \(Hue, 色�
 
 ### HSV：
 
-![image\.png](图片和附件/opencv入门教学/image%208.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%208.png)
 
 HSV 表达彩色图像的方式由三个部分组成：
 
@@ -726,7 +726,7 @@ HLS 和 HSV 的区别就是最后一个分量不同，HLS 的是 light\(亮度\)
 
 HLS 中的 L 分量为亮度，亮度为100，表示白色，亮度为0，表示黑色；HSV 中的 V 分量为明度，明度为100，表示光谱色，明度为0，表示黑色。
 
-![image\.png](图片和附件/opencv入门教学/image%2021.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2021.png)
 
 ### 其他颜色空间\(科普，仅作了解\)
 
@@ -744,7 +744,7 @@ b\*代表从蓝色到黄色的分量，取值\-128\~127
 
 这样规定是根据人类的视觉原理，灵长类动物的视觉都有两条通道：红绿通道和蓝黄通道，大多数动物最多只有一条通道，如果有人缺失其中一条，就是我们所说的色盲。
 
-![image\.png](图片和附件/opencv入门教学/image%2043.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2043.png)
 
 # 机器学习在opencv中的应用
 
@@ -758,7 +758,7 @@ b\*代表从蓝色到黄色的分量，取值\-128\~127
 
 下面这张图展示了机器学习的基本流程：
 
-![image\.png](图片和附件/opencv入门教学/image%2017.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2017.png)
 
 **Labeled Data（标记数据）：**图中蓝色区域显示了标记数据，这些数据包括了不同的几何形状（如六边形、正方形、三角形）。
 
@@ -796,7 +796,7 @@ b\*代表从蓝色到黄色的分量，取值\-128\~127
 
 - **例子：** Q\-learning、深度Q网络（DQN）。
 
-![image\.png](图片和附件/opencv入门教学/image%2030.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2030.png)
 
 ### 半监督学习**（ half Supervised Learning）**
 
@@ -853,23 +853,23 @@ KNN算法是机器学习算法中最基础、最简单的算法之一。它既�
 **根据它距离最近的 K 个样本点是什么类别来判断该新样本属于哪个类别**（多数投票）。
 eg:
 
-![image\.png](图片和附件/opencv入门教学/image%2029.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2029.png)
 
 图中绿色的点就是我们要预测的那个点，假设K=3。那么KNN算法就会找到与它距离最近的三个点（这里用圆圈把它圈起来了），看看哪种类别多一些，比如这个例子中是蓝色三角形多一些，新来的绿色点就归类到蓝三角了。
 
-![image\.png](图片和附件/opencv入门教学/image%206.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%206.png)
 
 但是，**当K=5的时候，判定就变成不一样了**。这次变成红圆多一些，所以新来的绿点被归类成红圆。从这个例子中，我们就能看得出K的取值是很重要的。
 
 那么该如何确定K取多少值好呢？从选取一个较小的K值开始，不断增加K的值，然后计算验证集合的方差，最终找到一个比较合适的K值。
 
-![image\.png](图片和附件/opencv入门教学/image%2034.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2034.png)
 
 当你增大k的时候，一般错误率会先降低，因为有周围更多的样本可以借鉴了，分类效果会变好。但是，当K值更大的时候，错误率会更高。这也很好理解，比如说你一共就35个样本，当你K增大到30的时候，KNN基本上就没意义了。（**K的值通常取奇数**，以避免平票的现象）
 
 KNN中的距离测量一般是欧式距离：
 
-![image\.png](图片和附件/opencv入门教学/image%2023.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2023.png)
 
 ## SVM（支持向量机）
 
@@ -885,35 +885,35 @@ SVM也有一定的适用范围，或者说准则：
 
 举个例子：
 
-![image\.png](图片和附件/opencv入门教学/image%2019.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2019.png)
 
 以上三种分类方式哪一种最好，显然b线最好，因为b线到两类的最近样本点距离最大，换言之，b线能尽可能地分割这两类样本点，这样再有蓝色点落在平面上时，b线能够最大概率的让这点保持在它的下方，而支持向量就是距离决策边界最近的点，而我们的目的就是根据这些支持向量来找到最大间隔，这就是SVM\.
 
-![image\.png](图片和附件/opencv入门教学/image.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image.png)
 
 现在来具体研究这个问题，我们要求的是y2，不妨把这3条线按如下表示，
 
-![image\.png](图片和附件/opencv入门教学/image%202.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%202.png)
 
 高中的解析几何内容相信大家掌握的很好，在此不再赘述，我们希望求得决策边界上的点到y2的最大距离，于是乎我们可以得到n维的平行线距离公式：
 
-![image\.png](图片和附件/opencv入门教学/image%2047.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2047.png)
 
-![image\.png](图片和附件/opencv入门教学/image%2018.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2018.png)
 
 对于y1y2y3两边同时除以d，得到例如y1:y/d=wx/d\+b\-1,带入距离公式，得到
 
-![image\.png](图片和附件/opencv入门教学/image%2040.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2040.png)
 
 我们现在让所有在y1下的点标记为\-1，y3上的点标记为1，为了让d最大，尽可能让w的模最小，可以转化成求如下问题，我们称其为目标函数
 
-![image\.png](图片和附件/opencv入门教学/image%2031.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2031.png)
 
 下面介绍拉格朗日乘法和kkt条件
 
 假设*x=x1,x2,\.\.\.,xn*是一个n维向量，*f\(x\)*和*h\(x\)*含有x的函数，我们需要找到满足*h\(x\)=0*条件下*f\(x\)*最小值，也就是将向量X带入h\(x\)中结果为0，带入f\(x\)中结果要最小，我们可以引入一个可以任意取值的自变量将两个函数h\(x\)和f\(x\)联系起来：
 
-![image\.png](图片和附件/opencv入门教学/image%2013.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2013.png)
 
 *L\(x，λ\)*叫做Lagrange函数（拉格朗日函数），*λ*叫做拉格朗日乘子（其实就是系数）。令*L\(x，λ\)*对x的导数为0，对*λ*的导数为0，求解出*x，λ* 的值，那么x就是函数*f\(x\)*在附加条件*h\(x\)*下极值点。
 
@@ -921,15 +921,15 @@ SVM也有一定的适用范围，或者说准则：
 
 那我们可以考虑加入一个“松弛变量”a\*\*2让条件h\(x\)≤0来达到等式的效果，即使条件变成h\(x\)\+a2=0，这里加上a2的原因是保证加的一定是非负数，即：a2≥0，但是目前不知道这个a2值是多少，一定会找到一个合适的a2值使h\(x\)\+a2=0成立。我们就把他变成等式约束了，就可以使用拉格朗日来操作了，只是多了a这个参数
 
-![image\.png](图片和附件/opencv入门教学/image%2015.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2015.png)
 
 然后分别对三个参数求导
 
-![image\.png](图片和附件/opencv入门教学/image%209.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%209.png)
 
 根据6式，我们可以推导出如果λ=0，约束不起作用，根据①式可知*h\(x\)≤0；如果λ≠0，*由于a=0，约束条件起作用，根据⑤式可知，h\(x\)=0。综上两个步骤我们可以得到λ⋅h\(x\)=0，且在约束条件起作用时，λ\>0,h\(x\)=0；约束条件不起作用时，λ=0,h\(x\)≤0。上面方程组中的⑥式可以改写成λ⋅h\(x\)=0。由于a\*\*2≥0，所以将⑤式也可以改写成h\(x\)≤0，所以上面方程组也可以转换成如下：
 
-![image\.png](图片和附件/opencv入门教学/image%2012.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2012.png)
 
 以上便是不等式约束优化问题的KKT条件。
 
@@ -937,51 +937,51 @@ SVM也有一定的适用范围，或者说准则：
 
 我们对③式的优化问题可以进行优化如下
 
-![image\.png](图片和附件/opencv入门教学/image%2026.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2026.png)
 
 满足最小化⑧式对应的x，λ值一定也要满足KKT条件，假设现在我们找到了合适的参数x值使f\(x\)取得最小值P【注意：这里根据①式来说，计算f\(x\)的最小值，这里假设合适参数x值对应的f\(x\)的值P就是最小值，不存在比这更小的值】，由于⑧式中λh\(x\)一定小于等于零，所以一定有 
 
-![image\.png](图片和附件/opencv入门教学/image%2046.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2046.png)
 
 为了找到最优的λ值，我们一定想要L\(x，λ\)接近P，即找到合适的λ最大化L\(x，λ\)，可以写成maxλL\(x，λ\)，所以⑧式求解合适的x，λ值最终可以转换成如下 
 
-![image\.png](图片和附件/opencv入门教学/image%2038.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2038.png)
 
 这里我们回到最初的目标，最小化目标函数
 
-![image\.png](图片和附件/opencv入门教学/image%2041.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2041.png)
 
 首先应用KKT条件：
 
-![image\.png](图片和附件/opencv入门教学/image%2016.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2016.png)
 
 且应当满足：
 
-![image\.png](图片和附件/opencv入门教学/image%2028.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2028.png)
 
 计算w和b
 
 接下来引入软间隔：写成如下形式：
 
-![屏幕截图 2025\-10\-18 135337\.png](图片和附件/opencv入门教学/屏幕截图%202025-10-18%20135337.png)
+![屏幕截图 2025\-10\-18 135337\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/屏幕截图%202025-10-18%20135337.png)
 
 构造拉格朗日函数：
 
-![屏幕截图 2025\-10\-18 135556\.png](图片和附件/opencv入门教学/屏幕截图%202025-10-18%20135556.png)
+![屏幕截图 2025\-10\-18 135556\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/屏幕截图%202025-10-18%20135556.png)
 
 上式中*λi,μi*是拉格朗日乘子，*w,b,ξ*是我们要计算的主问题参数。
 
 目标函数是个下凸函数，可以根据强对偶向，将对偶问题转换一下
 
-![image\.png](图片和附件/opencv入门教学/image%2011.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2011.png)
 
 分别求导并令其等于0，然后代回原式，整理之后可得：
 
-![image\.png](图片和附件/opencv入门教学/image%2020.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2020.png)
 
 接下来利用smo算法求解一组合适的λ和μ值：
 
-![image\.png](图片和附件/opencv入门教学/image%2027.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2027.png)
 
 这里得到的w和b虽然和硬分割结果一样，但是这是加入松弛变量之后得到的w和b的值，根据L式的条件C=λi\+μi和λi≥0,μi≥0，结合h式，C越大，必然导致松弛越小，如果C无穷大，那么就意味着模型过拟合，在训练SVM时，C是我们需要调节的参数。
 
@@ -997,7 +997,7 @@ SVM也有一定的适用范围，或者说准则：
 
 举个例子，下面这棵树可以根据天气情况判断是否适合外出玩耍：
 
-![image\.png](图片和附件/opencv入门教学/image%2039.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2039.png)
 
 **内部节点**表示对某个特征的判断（如天气、湿度）
 
@@ -1029,7 +1029,7 @@ SVM也有一定的适用范围，或者说准则：
 
 具体工作原理可以看下图：
 
-![image\.png](图片和附件/opencv入门教学/image%2024.png)
+![image\.png](../media/02%20OpenCV%20与视觉基础/opencv入门教学/image%2024.png)
 
 虽然随机森林在性能上优于决策树，但它有一个显著缺点：**难以解释**。
 

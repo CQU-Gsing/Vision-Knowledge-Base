@@ -380,7 +380,7 @@ ros2 run turtlesim turtlesim_node
 
 就可以看到小海龟了:
 
-![1752112400730\.png](图片和附件/ROS2 learning/1752112400730.png)
+![1752112400730\.png](../media/05%20Linux%20与%20ROS2/ROS2%20learning/1752112400730.png)
 
 再ctrl alt T打开新终端
 
@@ -394,7 +394,7 @@ ros2 run turtlesim turtle_teleop_key
 
 注意, 不要点击小海龟所在窗口, 应当保持turtle\_teleop\_key这个终端在最前面\( focus on\)\. 原因是, 第一个turtlesim\_node是一个程序, 这个turtle\_teleop\_key也是一个程序, 后者通过ros2提供的方式向前者发送控制指令, 由前者渲染小海龟移动, 所以键盘的操作应当在第二个终端下进行\.
 
-![image\.png](图片和附件/ROS2 learning/image%202.png)
+![image\.png](../media/05%20Linux%20与%20ROS2/ROS2%20learning/image%202.png)
 
 对了, 按Tab可以补全或给出提示\.
 
@@ -410,7 +410,7 @@ rqt
 
 打开ros2自带的调试工具rqt, 在Plugin选项卡中找到Introspection/Node Graph
 
-![image\.png](图片和附件/ROS2 learning/image.png)
+![image\.png](../media/05%20Linux%20与%20ROS2/ROS2%20learning/image.png)
 
 椭圆形包裹的叫**节点\(nodes\)** , 右边的结点通过**话题\(topics\)**为"/turtlr1/cmd\_vel"的话题通讯的方式发送来控制命令
 
@@ -550,7 +550,7 @@ ros2 run demo_python_pkg python_node
 python功能包结构分析
 
 
-![image\.png](图片和附件/ROS2 learning/image%201.png)
+![image\.png](../media/05%20Linux%20与%20ROS2/ROS2%20learning/image%201.png)
 
 # 六\.多功能包的最佳实践workspace
 

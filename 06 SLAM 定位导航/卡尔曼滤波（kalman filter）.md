@@ -14,18 +14,18 @@
 
 比如，我现在要测量一个硬币的长度，那么，我测量了K次，每次的测量结果我用Z1,Z2\.\.\.Zk表示。
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%201.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%201.png)
 
 以上式子把Zk提取出来了，画圈的是k\-1次的测量平均值。那么，再对式子进行处理：
 
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%2016.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%2016.png)
 
 得到了由红色框出来的式子。可以看出，随着k的增加，Xk\-\>Xk\-1,测量结果也不太重要。相反，当k比较小，那么Xk的作用就比较大。
 
 现在，我令k分之1=Kk,那么：
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%206.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%206.png)
 
 这里的Kk就是卡尔曼增益。
 
@@ -34,17 +34,17 @@
 这里引进估计误差和测量误差：
 
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%204.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%204.png)
 
 这是卡尔曼滤波的核心公式。
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image.png)
 
 # 卡尔曼滤波的具体例子
 
 具体步骤：
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%208.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%208.png)
 
 比如，一个东西长度50mm
 第一次估计长度为40mm
@@ -54,24 +54,24 @@
 测量误差是3mm
 
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%2019.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%2019.png)
 
 由公式
 
 
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%2018.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%2018.png)
 
 那么：
 
 根据公式和步骤，我们可以算出k\-0,1,2\.\.\.时候的平均值，测量误差等。
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%2014.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%2014.png)
 
 再多做一次后，得到以下的表格：
 
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%2010.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%2010.png)
 
 （Zk为测量值，它的范围在47\-53mm）
 
@@ -79,12 +79,12 @@
 1\.测量结果：就很随机
 
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%2017.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%2017.png)
 
 2\.估计结果（红色）：
 
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%2011.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%2011.png)
 
 我们发现，在经过五次后，我们的估计值就已经达到了49mm,已经离真实值50mm很接近，这就是卡尔曼滤波的递归思想。
 
@@ -94,30 +94,30 @@
 
 还是以一个例子来说明，现在我有两把秤，它们都不准，然后去称同一个物体，第一个称出来是30g,标准差时2g;第二个称出来时32g,标准差是4g。
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%203.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%203.png)
 
 那么，真实值估计是多少？
 
 这里就要引入卡尔曼增益K，我们要算K，使得估计值的方差最小：
 
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%2012.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%2012.png)
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%202.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%202.png)
 
 （1\-k）Z1和KZ2是相互独立的，才有下面的式子：
 
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%205.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%205.png)
 
 然后可以对k求导，得到极值：
 
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%209.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%209.png)
 
 所以，k=0\.2
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%2020.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%2020.png)
 
 所以，我们做出了预测，30\.4是最优解。
 
@@ -128,20 +128,20 @@
 Eg:
 这里我们分别计算身高体重年龄的方差和协方差：
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%2013.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%2013.png)
 
 
 
 计算得到的数据后，我们可以写出协方差矩阵：
 
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%207.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%207.png)
 
 
 
 # 卡尔曼滤波的应用
 
-![image\.png](图片和附件/卡尔曼滤波（kalman filter）/image%2015.png)
+![image\.png](../media/06%20SLAM%20定位导航/卡尔曼滤波（kalman%20filter）/image%2015.png)
 
 直白来说，就是通过传感器（如IMU，摄像头，激光雷达等）采集到的数据，都是原始数据，这些数据的产生本身就有噪音。
 
