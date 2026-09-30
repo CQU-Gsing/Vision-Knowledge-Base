@@ -19,7 +19,7 @@
 | 05 Linux 与 ROS2 | [Linux 安装与基础配置](<05 Linux 与 ROS2/Linux 安装与基础配置.md>) · [ROS2 learning](<05 Linux 与 ROS2/ROS2 learning.md>) |
 | 06 SLAM 定位导航 | [IMU & Kalman](<06 SLAM 定位导航/IMU & Kalman.md>) · [卡尔曼滤波（kalman filter）](<06 SLAM 定位导航/卡尔曼滤波（kalman filter）.md>) · [视觉SLAM初步](<06 SLAM 定位导航/视觉SLAM初步.md>) · [fastlivo2 learning](<06 SLAM 定位导航/fastlivo2 learning.md>) |
 | 07 专题与扩展 | 暂无文档 |
-| 08 文档资料 | 暂无文档 |
+| 08 文档资料 | [GitHub 资料访问指南（PDF）](<08 文档资料/GitHub.pdf>) |
 | 09 个人日志 | 暂无文档 |
 
 ## 文件说明
