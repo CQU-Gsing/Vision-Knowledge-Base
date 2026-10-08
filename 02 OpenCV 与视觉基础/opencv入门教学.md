@@ -48,7 +48,7 @@
 
 有了一定的前置知识，接下来正式开始opencv教学，首先我们需要配置环境，这里我们使用vscode，跟着下面这个教程操作即可
 
-https://blog\.csdn\.net/zczc66/article/details/145964746?fromshare=blogdetail\&sharetype=blogdetail\&sharerId=145964746\&sharerefer=PC\&sharesource=\&sharefrom=from\_link
+<https://blog.csdn.net/zczc66/article/details/145964746?fromshare=blogdetail&sharetype=blogdetail&sharerId=145964746&sharerefer=PC&sharesource=&sharefrom=from_link>
 
 
 
@@ -497,7 +497,7 @@ int main() {
 
 用于边缘检测的离散微分算子。
 
-具体数学原理部分可以参考csdn：https://blog\.csdn\.net/great\_yzl/article/details/119709699
+具体数学原理部分可以参考csdn：<https://blog.csdn.net/great_yzl/article/details/119709699>
 
 这里主播只给大家讲解应该如何去使用。
 

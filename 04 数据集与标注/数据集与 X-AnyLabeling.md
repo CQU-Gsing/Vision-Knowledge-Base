@@ -25,15 +25,17 @@
 
 4. 数据版本不可原地覆盖；训练结果必须记录数据版本。
 
-dataset\_v001/
-  images/train/        \# 训练图片
-  images/val/          \# 验证图片
-  images/test/         \# 独立测试图片
-  labels/train/        \# 与训练图片同名的 YOLO TXT 标签
-  labels/val/          \# 验证标签
-  labels/test/         \# 测试标签
-  dataset\.yaml         \# 数据路径与类别顺序
-  README\.md            \# 版本、来源、变更与已知偏差
+```text
+dataset_v001/
+  images/train/        # 训练图片
+  images/val/          # 验证图片
+  images/test/         # 独立测试图片
+  labels/train/        # 与训练图片同名的 YOLO TXT 标签
+  labels/val/          # 验证标签
+  labels/test/         # 测试标签
+  dataset.yaml         # 数据路径与类别顺序
+  README.md            # 版本、来源、变更与已知偏差
+```
 
 # 2\. AI 自动标注
 
@@ -51,20 +53,22 @@ dataset\_v001/
 
 - 通常先把 best\.pt 导出为固定输入尺寸的 ONNX，再复制同类型 Model Zoo 配置。
 
-\# 以下配置以官方 YOLO 示例字段为参考；type/name 应沿用所选适配模板。
-type: yolov5                         \# 模型适配器类型，不可随意自造
-name: yolov5s\-r20230520             \# 模型索引名，沿用模板更稳妥
-provider: GSing                     \# 模型提供者，可按团队修改
-display\_name: GSing Material YOLO   \# 软件下拉列表中显示的名称
-model\_path: D:/models/best\.onnx     \# ONNX 权重路径；Windows 注意路径写法
-iou\_threshold: 0\.45                 \# NMS 重叠阈值，控制重复框抑制
-conf\_threshold: 0\.25                \# 置信度阈值，过高会增加漏标
-max\_det: 300                        \# 单张图片最多保留的检测数量
-classes:                            \# 顺序必须与训练 dataset\.yaml 完全一致
-  \- device
-  \- food
-  \- tool
-  \- remedy
+```yaml
+# 以下配置以官方 YOLO 示例字段为参考；type/name 应沿用所选适配模板。
+type: yolov5                         # 模型适配器类型，不可随意自造
+name: yolov5s-r20230520             # 模型索引名，沿用模板更稳妥
+provider: GSing                     # 模型提供者，可按团队修改
+display_name: GSing Material YOLO   # 软件下拉列表中显示的名称
+model_path: D:/models/best.onnx     # ONNX 权重路径；Windows 注意路径写法
+iou_threshold: 0.45                 # NMS 重叠阈值，控制重复框抑制
+conf_threshold: 0.25                # 置信度阈值，过高会增加漏标
+max_det: 300                        # 单张图片最多保留的检测数量
+classes:                            # 顺序必须与训练 dataset.yaml 完全一致
+  - device
+  - food
+  - tool
+  - remedy
+```
 
 - 在模型下拉列表选择 Load Custom Model，导入 YAML；先用少量已知图片验证类别、框和置信度，再批量标注。
 
