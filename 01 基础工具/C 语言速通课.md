@@ -73,6 +73,8 @@ Made by leon
 
 
 
+装好 VS Code 后，还需要准备编译器，用来把 C 语言代码编译成可以运行的程序。这里使用包含 GCC 和 MinGW-w64 的预编译工具链，下载地址：[WinLibs GCC 下载页面](https://winlibs.com/#download)。Windows 10/11 的 64 位电脑可以在 Release versions 的 UCRT 栏目中，选择 POSIX threads 版本下的 Win64（without LLVM/Clang/LLD/LLDB），点击 Zip archive 下载。解压后将其中的 `mingw64` 文件夹放到 `D:\mingw64`，确认能找到 `D:\mingw64\bin\gcc.exe`，然后按照下面的步骤配置环境变量。
+
 为了让系统在任何位置都能识别 gcc 等命令，我们需要将 MinGW 的 bin 目录添加到系统的PATH 环境变量中
 
 1. 打开 编辑系统环境变量：在 Windows 搜索框或 运行\(Win \+ R\)中输入查看高级系统设置并打开。也可以右键点击“此电脑” \-\> “属性” \-\> “高级系统设置”。
