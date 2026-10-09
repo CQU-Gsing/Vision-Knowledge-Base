@@ -479,12 +479,12 @@ ros2 node list #查看节点
 ros2 pkg create --build-type ament_python --license Apache2.0 demo_python_pkg
 ```
 
-创建完成后，会在文件夹目录下生成再demo\_python\_pkg文件夹下面，创建python\_node\.py文件，相当于在功能包里面创建了节点。
+创建完成后，在功能包中的 `demo_python_pkg/demo_python_pkg/` 目录下创建 `python_node.py` 文件，相当于在功能包里面创建了节点。
 
 创建节点后，需要在生成功能包里面的setup\.py里面，要把新创建的节点放在console\_scripts里面：
 
 
-```SQL
+```Python
 setup(
     name=package_name,
     version='0.0.0',
@@ -517,7 +517,7 @@ python\_node=demo\_python\_pkg\.python\_node:main
 在package\.xml文件\(功能包清单文件\)下，添加rclpy的依赖
 
 ```XML
- <depend>rclpy<depend>
+ <depend>rclpy</depend>
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>

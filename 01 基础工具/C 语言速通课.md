@@ -2,6 +2,8 @@
 
 Made by leon
 
+> 本课供选择 C 语言的同学学习。视觉入门掌握一种编程语言即可，C 或 Python 都可以；已经会 Python 的同学可以直接开始后续实践，不必先学 C。
+
 ---
 
 
@@ -85,11 +87,15 @@ Made by leon
 
 **验证安装**
 
-1. 打开命令提示符：按Win \+ R，输入cmd ，然后按回车。（或者在搜索栏里搜索cmd也是可以的
+1. 打开命令提示符：按Win \+ R，输入cmd ，然后按回车。（或者在搜索栏里搜索cmd也是可以的）
 
-2. 测试编译器：在打开的黑色命令窗口中输入以下命令并按回车：bash
+2. 测试编译器：在打开的命令窗口中输入以下命令并按回车：
 
-然后复制并在 bash 中粘贴gcc \-\-version，并按下回车，如果安装和配置成功，将看到 GCC 版本信息（这表示系统现在可以找到并使用 gcc命令了）。
+```powershell
+gcc --version
+```
+
+如果安装和配置成功，将看到 GCC 版本信息（这表示系统现在可以找到并使用 gcc 命令了）。
 
 ### Lesson 2 : 语法规则
 
@@ -110,7 +116,7 @@ Made by leon
 
 ##### 预处理
 
-看到代码块的第一句`#include <studio.h>`,这是一句预处理指令，`#include`,用\#开头的指令都是预处理指令，那什么是预处理呢？顾名思义，预处理就是编译器工作的第一步，预处理有好几种作用，为了简单易懂，我们这里只讲\#include，\#include的原理非常粗暴，就是将其指向的文件内容直接复制粘贴过来，如`#include <studio.h>`，就是将`<studio.h>`这个头文件的内容直接粘贴到文件最前面
+看到代码块的第一句`#include <stdio.h>`,这是一句预处理指令，`#include`,用\#开头的指令都是预处理指令，那什么是预处理呢？顾名思义，预处理就是编译器工作的第一步，预处理有好几种作用，为了简单易懂，我们这里只讲\#include，\#include的原理非常粗暴，就是将其指向的文件内容直接复制粘贴过来，如`#include <stdio.h>`，就是将`<stdio.h>`这个头文件的内容直接粘贴到文件最前面
 
 如图，这就是执行预处理命令`gcc -E hello_world.c -o processed.i`后生成的hello\_world\.i文件的内容\.
 
@@ -1147,51 +1153,57 @@ int\* p;
 
 是的，指针存的是内存地址，但是指针本身就是一个变量啊，所以指针肯定有不同类型，那么不同类型指针存的东西相同吗？答案是，相同，例如
 
+```c
 int num = 16909060;
 
-int \*int\_ptr = \#
+int *int_ptr = &num;
 
-char \*char\_ptr = \#
+char *char_ptr = (char *)&num;
+```
 
 int\_ptr 和 char\_ptr 储存的地址都是0x16b466758，我们可以通过
 
-printf\("int\_ptr: %p\\n", \(void\*\)int\_ptr\);
+```c
+printf("int_ptr: %p\n", (void*)int_ptr);
 
-printf\("char\_ptr: %p\\n", \(void\*\)char\_ptr\); 
+printf("char_ptr: %p\n", (void*)char_ptr);
+```
 
 来求证。那现在肯定想问，那指针类型的不同有什么区别呢？答案是，指针类型的不同，决定了其对待内存的方式不同，我们知道，一个int 类型表示占用 4 个字节，而我们在讲变量那里讲到过，一个内存地址对应一个字节的内存空间，所以int 类型的指针在读取内存时，会连续读取四块内存，并把读取到的内存数据组合到一起，以整数的编码方式解码，而char 类型只会读取一块内存，并按照 ASCII 的编码方式解码,下面来求证
 
-\#include \<stdio\.h\>
+```c
+#include <stdio.h>
 
 
 
-int main\(\) \{
+int main() {
 
 int num = 16909060;
 
-int \*int\_ptr = \#
+int *int_ptr = &num;
 
-char \*char\_ptr = \#
-
-
-
-printf\("int\_ptr reads: %d\\n", \*int\_ptr\);
-
-printf\("char\_ptr reads: %d, %d, %d, %d\\n",
-
-\*\(char\_ptr\), \*\(char\_ptr \+ 1\), \*\(char\_ptr \+ 2\), \*\(char\_ptr \+ 3\)\);
+char *char_ptr = (char *)&num;
 
 
 
-printf\("Address stored in int\_ptr: %p\\n", \(void\*\)int\_ptr\);
+printf("int_ptr reads: %d\n", *int_ptr);
 
-printf\("Address stored in char\_ptr: %p\\n", \(void\*\)char\_ptr\);    
+printf("char_ptr reads: %d, %d, %d, %d\n",
+
+*(char_ptr), *(char_ptr + 1), *(char_ptr + 2), *(char_ptr + 3));
+
+
+
+printf("Address stored in int_ptr: %p\n", (void*)int_ptr);
+
+printf("Address stored in char_ptr: %p\n", (void*)char_ptr);
 
 
 
 return 0;
 
-\}
+}
+```
 
 这段代码的输出结果为
 
@@ -1218,9 +1230,11 @@ Address stored in char\_ptr: 0x16b466758
 3. 规则：`&` 运算符是一个一元运算符，它作用于一个变量，返回该变量在内存中的起始地址,返回的地址类型是“指向该变量类型的指针”。例如，`int a = 10;`，`&a` 的类型就是 `int*`\.
 示例：
 
+```c
 int num = 42;
 
-int \*p\_num = \# 
+int *p_num = &num;
+```
 
 在这个例子中，`&num` 的结果是 `num` 的地址，这个地址被赋值给了指针 `p_num`
 
@@ -1230,17 +1244,19 @@ int \*p\_num = \#
 
 4. 规则：`*` 运算符也是一个一元运算符，但它作用于一个指针变量,它会访问指针所存储的地址，并根据指针的类型来确定要访问的内存大小,解引用操作可以出现在赋值语句的左边或右边，这意味着你可以通过指针来读取或修改它所指向的数据示例：
 
+```c
 int num = 42;
 
-int \*p\_num = \#
+int *p_num = &num;
 
 
 
-int value = \*p\_num; // 解引用，从 p\_num 指向的地址读取数据,value 的值现在是 42
+int value = *p_num; // 解引用，从 p_num 指向的地址读取数据,value 的值现在是 42
 
 
 
-\*p\_num = 100; // 解引用，修改 p\_num 指向的地址中的数据,num 的值现在变成了 100,
+*p_num = 100; // 解引用，修改 p_num 指向的地址中的数据,num 的值现在变成了 100,
+```
 
 你不能解引用一个空指针（`NULL`），否则会导致程序崩溃
 

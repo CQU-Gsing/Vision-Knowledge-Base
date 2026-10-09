@@ -8,7 +8,7 @@
 
 图 1  Ubuntu 22\.04 安装主流程
 
-|**版本结论  **本项目 README 指定 Ubuntu 22\.04 \+ ROS2 Humble。不要因为官网已有更新版本就直接安装最新版，否则 ROS2 与依赖可能不兼容。|
+|**版本结论  **本教程使用 Ubuntu 22\.04 \+ ROS2 Humble。不要因为官网已有更新版本就直接安装最新版，否则 ROS2 与依赖可能不兼容。|
 |---|
 
 # 网页教程与参考资料
@@ -49,9 +49,11 @@
 
 - 同时下载 SHA256SUMS，并校验镜像，避免下载损坏。
 
-\# Windows PowerShell：计算 ISO 的 SHA256；该命令只读取文件。
-Get\-FileHash \.\\ubuntu\-22\.04\.5\-desktop\-amd64\.iso \-Algorithm SHA256
-\# 将输出值与 Ubuntu 官方 SHA256SUMS 中对应文件的值逐字比较。
+```powershell
+# Windows PowerShell：计算 ISO 的 SHA256；该命令只读取文件。
+Get-FileHash .\ubuntu-22.04.5-desktop-amd64.iso -Algorithm SHA256
+# 将输出值与 Ubuntu 官方 SHA256SUMS 中对应文件的值逐字比较。
+```
 
 # 4\. 制作启动盘与启动
 
@@ -73,25 +75,27 @@ Get\-FileHash \.\\ubuntu\-22\.04\.5\-desktop\-amd64\.iso \-Algorithm SHA256
 
 # 6\. 安装后基础配置
 
-\# 更新软件索引与已安装软件；执行前确保网络正常。
+```bash
+# 更新软件索引与已安装软件；执行前确保网络正常。
 sudo apt update
-sudo apt upgrade \-y
+sudo apt upgrade -y
 
-\# 安装常用开发工具。
-sudo apt install \-y git curl wget build\-essential cmake
+# 安装常用开发工具。
+sudo apt install -y git curl wget build-essential cmake
 
-\# 查看系统版本，确认应为 Ubuntu 22\.04。
-lsb\_release \-a
+# 查看系统版本，确认应为 Ubuntu 22.04。
+lsb_release -a
 
-\# 查看显卡和 USB 设备，为后续雷达/串口排错做准备。
-lspci \| grep \-i \-E "vga\|3d"
+# 查看显卡和 USB 设备，为后续雷达/串口排错做准备。
+lspci | grep -i -E "vga|3d"
 lsusb
+```
 
 # 7\. 为 ROS2 Humble 做准备
 
 - 确认系统为 Ubuntu 22\.04，再按照 ROS2 Humble 官方安装流程配置软件源。
 
-- 安装完成后每个新终端需要 source /opt/ros/humble/setup\.bash；项目工作空间还要 source install/setup\.bash。
+- 安装完成后每个新终端需要 `source /opt/ros/humble/setup.bash`；项目工作空间还要 `source install/setup.bash`。
 
 - 不要混用不同 ROS2 发行版的软件源和二进制包。
 
