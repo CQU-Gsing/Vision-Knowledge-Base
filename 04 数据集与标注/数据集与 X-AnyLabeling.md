@@ -4,6 +4,8 @@
 
 数据规范、AI 预标注与自定义 YOLO 模型
 
+- [X\-AnyLabeling 项目仓库](https://github.com/CVHub520/X-AnyLabeling) — 下载、版本与 Model Zoo
+
 ![image1\.png](../media/04%20数据集与标注/数据集与%20X-AnyLabeling/image1.png)
 
 图 1  AI 预标注不能替代人工复核
@@ -83,8 +85,6 @@ classes:                            # 顺序必须与训练 dataset.yaml 完全�
 - 测试集保持独立，不直接使用未经复核的 AI 标签。
 
 # 网页教程与参考资料
-
-- [X\-AnyLabeling 项目仓库](https://github.com/CVHub520/X-AnyLabeling) — 下载、版本与 Model Zoo
 
 - [官方用户指南](https://github.com/CVHub520/X-AnyLabeling/blob/main/docs/en/user_guide.md) — 界面、保存、复核状态与配置
 
