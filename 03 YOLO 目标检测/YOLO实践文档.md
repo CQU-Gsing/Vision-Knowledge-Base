@@ -70,12 +70,14 @@ conda activate v8
 
 如果发现没有切换,那么请重新关闭vscode,再次进入\.
 
-接下来就是安装pytorch,cuda,cudnn了:
+接下来安装 PyTorch：
 先来介绍一下什么是pytorch:pytorch是核心的深度学习的框架,基于python语言构建的\.
 
 CUDA​（Compute Unified Device Architecture）是NVIDIA开发的通用并行计算平台和编程模型。它允许开发者利用GPU的强大并行计算能力来加速各种计算密集型任务;cuDNN​（CUDA Deep Neural Network library）是建立在CUDA之上的深度学习加速库，专门为深度神经网络中的常见操作提供高度优化的实现\.
 
-**简单来说,两个是配置GPU的\.\(因为YOLO本质是目标检测,就会有图像,如果不配置GPU,在训练模型的时候就只能依靠CPU,这是十分缓慢的\.GPU是专门针对图像处理\)**
+**安装支持 CUDA 的 PyTorch 预编译版本时，会一并提供所需的 CUDA 运行库和 cuDNN，因此运行本教程的 YOLO 训练和推理通常不需要另外下载安装 CUDA Toolkit 或 cuDNN。** 使用 GPU 仍需电脑有支持 CUDA 的 NVIDIA 显卡，并安装兼容的 NVIDIA 驱动；没有这类显卡也可以使用 CPU 版 PyTorch，训练通常较慢。
+
+只有从源码编译 PyTorch 或编译自定义 CUDA 扩展等情况，才需要另外安装 CUDA Toolkit。可参考 [PyTorch 官方论坛说明](https://discuss.pytorch.org/t/pytorch-finds-cuda-despite-nvcc-not-found/166754/2)。
 
 安装命令:
 
@@ -85,9 +87,7 @@ CUDA​（Compute Unified Device Architecture）是NVIDIA开发的通用并行�
 conda install pytorch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0 cudatoolkit=11.3 -c pytorch
 ```
 
-但是，一定要先确保你的电脑上有
-
-这个是下载cuda和cudnn的,也就是在你的v8环境下配置GPU
+上面的命令会在当前的 v8 环境中安装 PyTorch 及其所需的 CUDA 运行依赖，无需再单独去 NVIDIA 官网下载 CUDA Toolkit 或 cuDNN。使用 GPU 前，请确认 NVIDIA 显卡驱动已正确安装。
 
 可能下载时间会比较慢一点\.请耐心等待\.
 
